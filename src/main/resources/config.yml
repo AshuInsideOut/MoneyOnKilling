@@ -1,0 +1,30 @@
+#Amount of money they will get on killing a player
+money-on-death: 10
+token-on-death: 10
+#Multipliers
+#Permission are
+# mok.multiplier.<level>
+#eg: mok.money-multiplier.level_4
+multipliers-money:
+  level_1: 1
+  level_2: 1.5
+  level_3: 2
+  level_4: 2.5
+  level_5: 3
+#Multipliers
+#Permission are
+# mok.multiplier.<level>
+#eg: mok.token-multiplier.level_4
+multipliers-token:
+  level_1: 1
+  level_2: 1.5
+  level_3: 2
+  level_4: 2.5
+  level_5: 3
+#Message sent one player kill someone and gets money
+money-add-message: "%money%$ has been added to your account."
+token-add-message: "%token% has been added to your account."
+
+take-money-on-death: 20
+
+money-remove-message: "%money%$ has been taken from your account for dying."

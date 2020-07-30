@@ -1,0 +1,47 @@
+import org.apache.tools.ant.filters.ReplaceTokens
+
+plugins {
+    id 'java'
+    id 'com.github.johnrengelman.shadow' version '5.2.0'
+}
+
+shadowJar {
+    setArchivesBaseName("MoneyOnKilling")
+    destinationDirectory = file("PaperMCServer/plugins/")
+    getArchiveClassifier().set("")
+}
+
+group = 'com.github.ashuguptagamer'
+version = '1.0'
+
+sourceCompatibility = '1.8'
+targetCompatibility = '1.8'
+
+repositories {
+    mavenCentral()
+    maven {
+        name = 'papermc-repo'
+        url = 'https://papermc.io/repo/repository/maven-public/'
+    }
+    maven {
+        name = 'sonatype'
+        url = 'https://oss.sonatype.org/content/groups/public/'
+    }
+    maven {
+        url 'https://jitpack.io'
+    }
+}
+
+dependencies {
+    compileOnly 'org.github.paperspigot:paperspigot-api:1.8.8-R0.1-SNAPSHOT'
+    compile (group: 'com.github.Realizedd', name: 'TokenManager', version: '3.2.4') {
+        transitive = false
+    }
+    compileOnly "com.github.MilkBowl:VaultAPI:1.7"
+}
+
+processResources {
+    from(sourceSets.main.resources.srcDirs) {
+        filter ReplaceTokens, tokens: [version: version]
+    }
+}

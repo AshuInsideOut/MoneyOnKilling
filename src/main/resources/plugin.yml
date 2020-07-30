@@ -1,0 +1,7 @@
+name: MoneyOnKilling
+version: @version@
+main: com.github.ashuguptagamer.moneyonkilling.MoneyOnKilling
+api-version: 1.16
+depend: [TokenManager]
+authors: [AshuGuptaGamer]
+description: A simple plugin that gives money to players on killing each others, for DPC
